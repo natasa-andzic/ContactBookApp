@@ -13,13 +13,11 @@ import com.natasaandzic.domaci1.db.ContactsDbHelper;
 
 public class AddNewContactActivity extends AppCompatActivity {
 
-    private Button saveButton;
+    private Button saveBtn;
     private EditText nameEt;
     private EditText surnameEt;
     private EditText numberEt;
     private EditText emailEt;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +29,9 @@ public class AddNewContactActivity extends AppCompatActivity {
         numberEt = findViewById(R.id.et_add_contact_number);
         emailEt = findViewById(R.id.et_add_contact_email);
 
-        saveButton = findViewById(R.id.saveButton);
+        saveBtn = findViewById(R.id.saveButton);
 
-        saveButton.setOnClickListener(new View.OnClickListener() {
+        saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

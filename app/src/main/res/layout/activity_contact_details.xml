@@ -16,72 +16,81 @@ Dugme Edit nas vodi do EditContactActivity-->
     tools:context="com.natasaandzic.domaci1.activity.ContactDetailsActivity">
 
     <TextView
-        android:id="@+id/nameTextView"
+        android:id="@+id/tv_contact_details_name"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="Name:"
         android:textSize="30sp"
+        android:layout_marginLeft="10dp"
         android:textColor="#BA68C8"
         />
 
-    <EditText
-        android:id="@+id/et_add_contact_name"
+    <TextView
+        android:id="@+id/tv_contact_details_name_value"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/nameTextView"/>
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/tv_contact_details_name"/>
 
     <TextView
-        android:id="@+id/lastNameTextView"
-        android:layout_below="@id/et_add_contact_name"
+        android:id="@+id/tv_contact_details_surname"
+        android:layout_below="@id/tv_contact_details_name_value"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="Last name:"
+        android:layout_marginLeft="10dp"
         android:textSize="30sp"
         android:textColor="#BA68C8"
         />
 
-    <EditText
-        android:id="@+id/et_add_contact_surname"
+    <TextView
+        android:id="@+id/tv_contact_details_surname_value"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/lastNameTextView"/>
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/tv_contact_details_surname"/>
 
     <TextView
-        android:id="@+id/tv_add_contact_phone"
+        android:id="@+id/tv_contact_details_phone"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="Phone:"
         android:textSize="30sp"
+        android:layout_marginLeft="10dp"
         android:textColor="#BA68C8"
-        android:layout_below="@id/et_add_contact_surname"
+        android:layout_below="@id/tv_contact_details_surname_value"
         />
 
-    <EditText
-        android:id="@+id/et_add_contact_number"
+    <TextView
+        android:id="@+id/tv_contact_details_phone_value"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/tv_add_contact_phone"/>
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/tv_contact_details_phone"/>
 
     <TextView
-        android:id="@+id/emailTextView"
+        android:id="@+id/tv_contact_details_email"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="Email:"
+        android:layout_marginLeft="10dp"
         android:textSize="30sp"
         android:textColor="#BA68C8"
-        android:layout_below="@id/et_add_contact_number"
+        android:layout_below="@id/tv_contact_details_phone_value"
         />
 
-    <EditText
-        android:id="@+id/et_add_contact_email"
+    <TextView
+        android:id="@+id/tv_contact_details_email_value"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/emailTextView"/>
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/tv_contact_details_email"/>
 
     <Button
-        android:id="@+id/deleteButton"
+        android:id="@+id/btn_contact_details_delete"
         android:text="Delete"
         android:layout_width="120dp"
+        android:layout_marginLeft="10dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -90,12 +99,13 @@ Dugme Edit nas vodi do EditContactActivity-->
         />
 
     <Button
-        android:id="@+id/editButton"
+        android:id="@+id/btn_contact_details_edit"
         android:text="Edit"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
         android:layout_marginBottom="50dp"
         android:layout_centerHorizontal="true"
         />

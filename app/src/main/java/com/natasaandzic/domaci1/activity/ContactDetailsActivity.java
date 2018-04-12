@@ -10,29 +10,31 @@ import com.natasaandzic.domaci1.R;
 
 public class ContactDetailsActivity extends AppCompatActivity {
 
-    Button delete;
-    Button edit;
+    Button deleteBtn;
+    Button editBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_details);
 
-        delete = findViewById(R.id.deleteButton);
-        edit = findViewById(R.id.editButton);
+        deleteBtn = findViewById(R.id.btn_contact_details_delete);
+        editBtn = findViewById(R.id.btn_contact_details_edit);
 
-        delete.setOnClickListener(new View.OnClickListener() {
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ContactDetailsActivity.this, HomeActivity.class);
+                Intent i = new Intent();
                 startActivity(i);
             }
         });
 
-        edit.setOnClickListener(new View.OnClickListener() {
+        editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ContactDetailsActivity.this, EditContactActivity.class);
+
+
+                Intent i = new Intent();
                 startActivity(i);
             }
         });

@@ -14,7 +14,7 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
     tools:context="com.natasaandzic.domaci1.activity.EditContactActivity">
 
     <TextView
-        android:id="@+id/nameTextView"
+        android:id="@+id/tv_edit_contact_name"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="Name:"
@@ -25,18 +25,18 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
         />
 
     <EditText
-        android:id="@+id/et_add_contact_name"
+        android:id="@+id/et_edit_contact_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/nameTextView"
+        android:layout_below="@id/tv_edit_contact_name"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         />
 
     <TextView
-        android:id="@+id/lastNameTextView"
-        android:layout_below="@id/et_add_contact_name"
+        android:id="@+id/tv_edit_contact_surname"
+        android:layout_below="@id/et_edit_contact_name"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="Last name:"
@@ -47,61 +47,61 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
         />
 
     <EditText
-        android:id="@+id/et_add_contact_surname"
+        android:id="@+id/et_edit_contact_surname"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/lastNameTextView"
+        android:layout_below="@id/tv_edit_contact_surname"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         />
 
     <TextView
-        android:id="@+id/tv_add_contact_phone"
+        android:id="@+id/tv_edit_contact_phone"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="Phone:"
         android:textSize="30sp"
         android:textColor="#BA68C8"
-        android:layout_below="@id/et_add_contact_surname"
+        android:layout_below="@id/et_edit_contact_surname"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         />
 
     <EditText
-        android:id="@+id/et_add_contact_number"
+        android:id="@+id/et_edit_contact_number"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/tv_add_contact_phone"
+        android:layout_below="@id/tv_edit_contact_phone"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         />
 
     <TextView
-        android:id="@+id/emailTextView"
+        android:id="@+id/tv_edit_contact_email"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="Email:"
         android:textSize="30sp"
         android:textColor="#BA68C8"
-        android:layout_below="@id/et_add_contact_number"
+        android:layout_below="@id/et_edit_contact_number"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         />
 
     <EditText
-        android:id="@+id/et_add_contact_email"
+        android:id="@+id/et_edit_contact_email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/emailTextView"
+        android:layout_below="@id/tv_edit_contact_email"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         />
 
     <Button
-        android:id="@+id/saveButton"
+        android:id="@+id/btn_edit_contact_save"
         android:text="Save"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
@@ -109,6 +109,5 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
         android:layout_marginBottom="50dp"
         android:layout_centerHorizontal="true"
         />
-
 
 </RelativeLayout>
