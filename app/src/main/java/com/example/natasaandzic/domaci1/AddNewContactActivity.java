@@ -27,8 +27,11 @@ public class AddNewContactActivity extends AppCompatActivity {
 
                 // upisi u fajl
 
-
-
+                //nameEditText.getText().toString().trim();
+                //String name = nameEditText.getText().toString().trim();
+                //cv.put(Person.COLUMN_NAME, name);
+                //db.insertDataInDatabase(Person.tableName, null, cv);
+                //nameEditText.getText().clear();
 
                 // prebaci se na homeactivity
                 Intent i = new Intent(AddNewContactActivity.this, HomeActivity.class);
