@@ -25,7 +25,7 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
         />
 
     <EditText
-        android:id="@+id/nameEditText"
+        android:id="@+id/et_add_contact_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/nameTextView"
@@ -36,7 +36,7 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
 
     <TextView
         android:id="@+id/lastNameTextView"
-        android:layout_below="@id/nameEditText"
+        android:layout_below="@id/et_add_contact_name"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="Last name:"
@@ -47,7 +47,7 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
         />
 
     <EditText
-        android:id="@+id/lastNameEditText"
+        android:id="@+id/et_add_contact_surname"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/lastNameTextView"
@@ -57,22 +57,22 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
         />
 
     <TextView
-        android:id="@+id/phoneTextView"
+        android:id="@+id/tv_add_contact_phone"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="Phone:"
         android:textSize="30sp"
         android:textColor="#BA68C8"
-        android:layout_below="@id/lastNameEditText"
+        android:layout_below="@id/et_add_contact_surname"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         />
 
     <EditText
-        android:id="@+id/phoneEditText"
+        android:id="@+id/et_add_contact_number"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/phoneTextView"
+        android:layout_below="@id/tv_add_contact_phone"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
@@ -85,13 +85,13 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
         android:text="Email:"
         android:textSize="30sp"
         android:textColor="#BA68C8"
-        android:layout_below="@id/phoneEditText"
+        android:layout_below="@id/et_add_contact_number"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         />
 
     <EditText
-        android:id="@+id/emailEditText"
+        android:id="@+id/et_add_contact_email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/emailTextView"

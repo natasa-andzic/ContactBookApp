@@ -37,4 +37,11 @@ public class ContactDetailsActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        //napraviintent i setresult i finish()
+    }
 }
