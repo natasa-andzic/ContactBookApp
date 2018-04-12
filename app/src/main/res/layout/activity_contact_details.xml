@@ -13,7 +13,7 @@ Dugme Edit nas vodi do EditContactActivity-->
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.natasaandzic.domaci1.ContactDetailsActivity">
+    tools:context="com.natasaandzic.domaci1.activity.ContactDetailsActivity">
 
     <TextView
         android:id="@+id/nameTextView"

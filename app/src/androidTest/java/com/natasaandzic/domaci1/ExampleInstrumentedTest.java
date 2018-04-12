@@ -1,4 +1,4 @@
-package com.example.natasaandzic.domaci1;
+package com.natasaandzic.domaci1;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.natasaandzic.domaci1", appContext.getPackageName());
+        assertEquals("com.natasaandzic.domaci1", appContext.getPackageName());
     }
 }

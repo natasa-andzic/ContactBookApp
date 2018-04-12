@@ -11,7 +11,7 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.natasaandzic.domaci1.EditContactActivity">
+    tools:context="com.natasaandzic.domaci1.activity.EditContactActivity">
 
     <TextView
         android:id="@+id/nameTextView"

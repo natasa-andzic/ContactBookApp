@@ -18,7 +18,7 @@ Prvi ekran koji se pojavi kada se pokrene aplikacija-->
 
 
     <Button
-        android:id="@+id/addNewContact"
+        android:id="@+id/btn_home_add_new_contact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add new contact"
@@ -27,7 +27,7 @@ Prvi ekran koji se pojavi kada se pokrene aplikacija-->
         />
 
     <Button
-        android:id="@+id/showContact"
+        android:id="@+id/btn_home_show_contact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Show contact"

@@ -1,4 +1,4 @@
-package com.example.natasaandzic.domaci1;
+package com.natasaandzic.domaci1;
 
 import org.junit.Test;
 

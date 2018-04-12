@@ -1,14 +1,12 @@
-package com.example.natasaandzic.domaci1;
+package com.natasaandzic.domaci1.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
+import com.natasaandzic.domaci1.R;
 
 public class AddNewContactActivity extends AppCompatActivity {
 
@@ -30,7 +28,7 @@ public class AddNewContactActivity extends AppCompatActivity {
                 //nameEditText.getText().toString().trim();
                 //String name = nameEditText.getText().toString().trim();
                 //cv.put(Person.COLUMN_NAME, name);
-                //db.insertDataInDatabase(Person.tableName, null, cv);
+                //com.natasaandzic.domaci1.db.insertDataInDatabase(Person.tableName, null, cv);
                 //nameEditText.getText().clear();
 
                 // prebaci se na homeactivity

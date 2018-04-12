@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.natasaandzic.domaci1">
+    package="com.natasaandzic.domaci1">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity">
+        <activity android:name=".activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,12 +17,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddNewContactActivity"
+            android:name=".activity.AddNewContactActivity"
             android:label="Add a new contact" />
         <activity
-            android:name=".EditContactActivity"
+            android:name=".activity.EditContactActivity"
             android:label="Edit contact" />
-        <activity android:name=".ContactDetailsActivity"></activity>
+        <activity android:name=".activity.ContactDetailsActivity"></activity>
     </application>
 
 </manifest>

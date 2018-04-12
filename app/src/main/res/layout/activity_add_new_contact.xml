@@ -11,8 +11,8 @@ Sadrzi dugme Save koje sadrzi intent na HomeActivity-->
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/addNewContact"
-    tools:context="com.example.natasaandzic.domaci1.AddNewContactActivity">
+    android:id="@+id/btn_home_add_new_contact"
+    tools:context="com.natasaandzic.domaci1.activity.AddNewContactActivity">
 
     <TextView
         android:id="@+id/nameTextView"
