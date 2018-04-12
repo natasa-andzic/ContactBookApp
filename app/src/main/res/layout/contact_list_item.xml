@@ -14,4 +14,15 @@
         android:textColor="#000000"
         />
 
+    <TextView
+        android:id="@+id/noContactsView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
+        android:text="No contacts found!"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
 </LinearLayout>
