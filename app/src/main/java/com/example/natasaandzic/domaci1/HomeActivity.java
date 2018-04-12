@@ -21,8 +21,6 @@ public class HomeActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TextView noContactsView;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

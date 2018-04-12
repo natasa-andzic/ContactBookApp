@@ -16,17 +16,6 @@ Prvi ekran koji se pojavi kada se pokrene aplikacija-->
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/noContactsView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:fontFamily="sans-serif-light"
-        android:text="No contacts found!"
-        android:textColor="#000000"
-        android:textSize="20sp" />
-
 
     <Button
         android:id="@+id/addNewContact"
@@ -35,6 +24,15 @@ Prvi ekran koji se pojavi kada se pokrene aplikacija-->
         android:text="Add new contact"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        />
+
+    <Button
+        android:id="@+id/showContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show contact"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         />
 
 </RelativeLayout>
