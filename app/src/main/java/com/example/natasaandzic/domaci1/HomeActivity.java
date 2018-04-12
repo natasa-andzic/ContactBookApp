@@ -59,6 +59,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        addNewContact = findViewById(R.id.addNewContact);
         recyclerView = findViewById(R.id.recycler_view);
         noContactsView = findViewById(R.id.noContactsView);
 
@@ -195,7 +196,7 @@ public class HomeActivity extends AppCompatActivity {
             peopleArray = new String[peopleList.size()];
             peopleList.toArray(peopleArray);
 
-            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.activity_home_text_view, R.id.textView,peopleArray);
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.contact_list_item, R.id.textView,peopleArray);
             listView.setAdapter(arrayAdapter);
 
             bufferedReader.close();
