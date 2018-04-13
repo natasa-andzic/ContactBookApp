@@ -1,5 +1,6 @@
 package com.natasaandzic.domaci1.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -66,11 +67,13 @@ public class ContactDetailsActivity extends AppCompatActivity {
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ContactDetailsActivity.this,HomeActivity.class);
-                i.putExtra(ContactDetailsActivity.EXTRA_ID, id);
+                //Intent i = new Intent(ContactDetailsActivity.this,HomeActivity.class);
+                //i.putExtra(ContactDetailsActivity.EXTRA_ID, id);
                 ContactsDbHelper.getInstance(ContactDetailsActivity.this).deleteContact(id);
                 Intent newIntent = new Intent();
-                setResult(REQUEST_CODE_EDIT_CONTACT, newIntent);
+                //Na ovoj liniji ne setuje request code, nego rezultat akcije to je Activity.RESULT_OK
+                //setResult(REQUEST_CODE_EDIT_CONTACT, newIntent);
+                setResult(Activity.RESULT_OK);
                 finish();
             }
         });

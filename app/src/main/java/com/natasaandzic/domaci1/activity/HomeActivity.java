@@ -90,15 +90,9 @@ public class HomeActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode != REQUEST_CODE_MANAGE_CONTACT){
-            return;
+        if (requestCode == REQUEST_CODE_MANAGE_CONTACT && resultCode == Activity.RESULT_OK){
+            mContactsRecyclerAdapter.setCursor(getCursor());
         }
-
-        if (resultCode != Activity.RESULT_OK){
-            return;
-        }
-
-        mContactsRecyclerAdapter.setCursor(getCursor());
     }
 
     private class UserClickCallback implements OnUserClickCallback {
