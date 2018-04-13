@@ -125,16 +125,16 @@ public class ContactDetailsActivity extends AppCompatActivity {
             surnameTv.setText(surname);
             numberTv.setText(number);
             emailTv.setText(email);
-
         }
 
     }
         @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        //Ako pozovemo onbackpressed on ce da overriduje nas result ok sa result canceled
+        //super.onBackPressed();
 
-        Intent i = new Intent();
-        startActivityForResult(i, REQUEST_CODE_EDIT_CONTACT);
+        //Intent i = new Intent();
+        setResult(Activity.RESULT_OK);
         finish();
     }
 }

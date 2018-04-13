@@ -90,6 +90,18 @@ public class HomeActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        Log.v(TAG, "ACTIVITY RESULT");
+
+        if (requestCode == REQUEST_CODE_MANAGE_CONTACT){
+            Log.v(TAG, "RQ MANAGE CONTACT");
+        }
+
+        Log.v(TAG, ""+resultCode);
+
+        if (resultCode == Activity.RESULT_OK){
+            Log.v(TAG, "RESULT JE OK");
+        }
+
         if (requestCode == REQUEST_CODE_MANAGE_CONTACT && resultCode == Activity.RESULT_OK){
             mContactsRecyclerAdapter.setCursor(getCursor());
         }
