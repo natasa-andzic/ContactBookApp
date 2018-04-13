@@ -6,14 +6,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.natasaandzic.domaci1.R;
 import com.natasaandzic.domaci1.adapter.ContactsRecyclerAdapter;
@@ -54,6 +53,10 @@ public class HomeActivity extends AppCompatActivity {
         LinearLayoutManager lm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(lm);
 
+        DividerItemDecoration mDividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                lm.getOrientation());
+        recyclerView.addItemDecoration(mDividerItemDecoration);
+
         mOnUserClickCallback = new UserClickCallback();
 
         mContactsRecyclerAdapter = new ContactsRecyclerAdapter(getCursor(), mOnUserClickCallback);
@@ -71,7 +74,7 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    private Cursor getCursor(){
+    private Cursor getCursor() {
 
         SQLiteDatabase db = ContactsDbHelper.getInstance(this).getWritableDatabase();
 
@@ -92,17 +95,17 @@ public class HomeActivity extends AppCompatActivity {
 
         Log.v(TAG, "ACTIVITY RESULT");
 
-        if (requestCode == REQUEST_CODE_MANAGE_CONTACT){
+        if (requestCode == REQUEST_CODE_MANAGE_CONTACT) {
             Log.v(TAG, "RQ MANAGE CONTACT");
         }
 
-        Log.v(TAG, ""+resultCode);
+        Log.v(TAG, "" + resultCode);
 
-        if (resultCode == Activity.RESULT_OK){
+        if (resultCode == Activity.RESULT_OK) {
             Log.v(TAG, "RESULT JE OK");
         }
 
-        if (requestCode == REQUEST_CODE_MANAGE_CONTACT && resultCode == Activity.RESULT_OK){
+        if (requestCode == REQUEST_CODE_MANAGE_CONTACT && resultCode == Activity.RESULT_OK) {
             mContactsRecyclerAdapter.setCursor(getCursor());
         }
     }
@@ -112,7 +115,7 @@ public class HomeActivity extends AppCompatActivity {
         @Override
         public void onUserClick(int userId, String name, String surname, String number, String email, int position) {
 
-            Log.v(TAG, "name "+ "surname");
+            Log.v(TAG, "name " + "surname");
 
             Intent intent = new Intent(HomeActivity.this, ContactDetailsActivity.class);
             intent.putExtra(HomeActivity.EXTRA_ID, userId);
