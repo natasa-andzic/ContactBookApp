@@ -3,29 +3,75 @@ package com.natasaandzic.domaci1.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.natasaandzic.domaci1.R;
+import com.natasaandzic.domaci1.db.ContactsDbHelper;
+
+import org.w3c.dom.Text;
 
 public class ContactDetailsActivity extends AppCompatActivity {
 
-    Button deleteBtn;
-    Button editBtn;
+    public static final int REQUEST_CODE_EDIT_CONTACT = 1;
+
+    public static final String EXTRA_ID = "id";
+    public static final String EXTRA_NAME = "name";
+    public static final String EXTRA_SURNAME = "surname";
+    public static final String EXTRA_NUMBER = "number";
+    public static final String EXTRA_EMAIL = "email";
+
+    private TextView nameTv;
+    private TextView surnameTv;
+    private TextView numberTv;
+    private TextView emailTv;
+
+    private int id;
+    private String name;
+    private String surname;
+    private String number;
+    private String email;
+
+    private boolean shouldUpdateUIOnResume;
+
+    private Button deleteBtn;
+    private Button editBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_details);
 
+        id = getIntent().getIntExtra(EXTRA_ID, 0);
+        name = getIntent().getStringExtra(EXTRA_NAME);
+        surname = getIntent().getStringExtra(EXTRA_SURNAME);
+        number = getIntent().getStringExtra(EXTRA_NUMBER);
+        email = getIntent().getStringExtra(EXTRA_EMAIL);
+
         deleteBtn = findViewById(R.id.btn_contact_details_delete);
         editBtn = findViewById(R.id.btn_contact_details_edit);
+
+        nameTv = findViewById(R.id.tv_contact_details_name_value);
+        nameTv.setText(name);
+        surnameTv = findViewById(R.id.tv_contact_details_surname_value);
+        surnameTv.setText(surname);
+        numberTv = findViewById(R.id.tv_contact_details_phone_value);
+        numberTv.setText(number);
+        emailTv = findViewById(R.id.tv_contact_details_email_value);
+        emailTv.setText(email);
 
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent();
-                startActivity(i);
+                Intent i = new Intent(ContactDetailsActivity.this,HomeActivity.class);
+                i.putExtra(ContactDetailsActivity.EXTRA_ID, id);
+                ContactsDbHelper.getInstance(ContactDetailsActivity.this).deleteContact(id);
+                Intent newIntent = new Intent();
+                setResult(REQUEST_CODE_EDIT_CONTACT, newIntent);
+                finish();
             }
         });
 
@@ -33,17 +79,59 @@ public class ContactDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Intent intent = new Intent(ContactDetailsActivity.this, EditContactActivity.class);
 
-                Intent i = new Intent();
-                startActivity(i);
+                intent.putExtra(ContactDetailsActivity.EXTRA_ID, id);
+                intent.putExtra(ContactDetailsActivity.EXTRA_NAME, name);
+                intent.putExtra(ContactDetailsActivity.EXTRA_SURNAME, surname);
+                intent.putExtra(ContactDetailsActivity.EXTRA_NUMBER, number);
+                intent.putExtra(ContactDetailsActivity.EXTRA_EMAIL, email);
+                startActivityForResult(intent, ContactDetailsActivity.REQUEST_CODE_EDIT_CONTACT);
             }
         });
     }
 
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode != REQUEST_CODE_EDIT_CONTACT || data == null){
+            return;
+        }
+
+       /* int status = data.getIntExtra(ContactDetailsActivity.EXTRA_CONTACT_EDIT_STATUS, -1);
+
+        if (status == ContactDetailsActivity.CONTACT_EDITED){
+;*/
+            name = data.getStringExtra(EXTRA_NAME);
+            surname = data.getStringExtra(EXTRA_SURNAME);
+            number = data.getStringExtra(EXTRA_NUMBER);
+            email = data.getStringExtra(EXTRA_EMAIL);
+
+            shouldUpdateUIOnResume = true;
+        }
+
+
     @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (shouldUpdateUIOnResume) {
+            shouldUpdateUIOnResume = false;
+
+            nameTv.setText(name);
+            surnameTv.setText(surname);
+            numberTv.setText(number);
+            emailTv.setText(email);
+
+        }
+
+    }
+        @Override
     public void onBackPressed() {
         super.onBackPressed();
 
-        //napraviintent i setresult i finish()
+        Intent i = new Intent();
+        startActivityForResult(i, REQUEST_CODE_EDIT_CONTACT);
+        finish();
     }
 }
