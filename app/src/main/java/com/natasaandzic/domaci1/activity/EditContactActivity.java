@@ -38,13 +38,16 @@ public class EditContactActivity extends AppCompatActivity {
 
         saveBtn = findViewById(R.id.btn_edit_contact_save);
 
-        nameEt = findViewById(R.id.et_add_contact_name);
+        //Ovde si pozivala et_add_contact_ id-eve umesto et_edit_contact_
+        //et_add su u activity_add_contct layoutu
+
+        nameEt = findViewById(R.id.et_edit_contact_name);
         nameEt.setText(name);
-        surnameEt = findViewById(R.id.et_add_contact_surname);
+        surnameEt = findViewById(R.id.et_edit_contact_surname);
         surnameEt.setText(surname);
-        numberEt = findViewById(R.id.et_add_contact_number);
+        numberEt = findViewById(R.id.et_edit_contact_number);
         numberEt.setText(number);
-        emailEt = findViewById(R.id.et_add_contact_email);
+        emailEt = findViewById(R.id.et_edit_contact_email);
         emailEt.setText(email);
 
 
