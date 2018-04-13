@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.natasaandzic.domaci1.R;
@@ -32,7 +33,7 @@ public class HomeActivity extends AppCompatActivity {
     public static final int REQUEST_CODE_MANAGE_CONTACT = 1;
 
     private Button addNewContactBtn;
-    private Button showContactBtn;
+    private LinearLayout contactItemLl;
 
     private RecyclerView recyclerView;
     private TextView noContactsTv;
@@ -46,7 +47,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         addNewContactBtn = findViewById(R.id.btn_home_add_new_contact);
-        showContactBtn = findViewById(R.id.btn_home_show_contact);
+        contactItemLl = findViewById(R.id.tv_contact_list_item);
 
         recyclerView = findViewById(R.id.rv_home_contact_list);
         recyclerView.setHasFixedSize(true);
@@ -65,15 +66,6 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, AddNewContactActivity.class);
                 startActivityForResult(i, REQUEST_CODE_MANAGE_CONTACT);
-            }
-        });
-
-        //Pritiskom na dugme Show prelazimo na ContactDetailsActivity
-        showContactBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, ContactDetailsActivity.class);
-                startActivity(i);
             }
         });
 

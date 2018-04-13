@@ -26,14 +26,6 @@ Prvi ekran koji se pojavi kada se pokrene aplikacija-->
         android:layout_alignParentRight="true"
         />
 
-    <Button
-        android:id="@+id/btn_home_show_contact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Show contact"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        />
 
     <TextView
         android:visibility="gone"
