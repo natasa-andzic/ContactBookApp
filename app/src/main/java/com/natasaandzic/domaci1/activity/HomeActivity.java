@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -33,10 +34,8 @@ public class HomeActivity extends AppCompatActivity {
     public static final int REQUEST_CODE_MANAGE_CONTACT = 1;
 
     private Button addNewContactBtn;
-    private LinearLayout contactItemLl;
 
     private RecyclerView recyclerView;
-    private TextView noContactsTv;
 
     private OnUserClickCallback mOnUserClickCallback;
     private ContactsRecyclerAdapter mContactsRecyclerAdapter;
@@ -45,9 +44,10 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
 
         addNewContactBtn = findViewById(R.id.btn_home_add_new_contact);
-        contactItemLl = findViewById(R.id.tv_contact_list_item);
 
         recyclerView = findViewById(R.id.rv_home_contact_list);
         recyclerView.setHasFixedSize(true);

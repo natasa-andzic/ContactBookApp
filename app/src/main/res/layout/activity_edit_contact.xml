@@ -4,6 +4,7 @@
 Dolazi se ovde kada se u HomeActivity klikne na konkretni kontakt
 Dugme Save sacuva promene i vrati se na konkretni kontakt-->
 
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -11,15 +12,26 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/backGroundColor"
     tools:context="com.natasaandzic.domaci1.activity.EditContactActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
 
     <TextView
         android:id="@+id/tv_edit_contact_name"
+        android:layout_below="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="Name:"
-        android:textSize="30sp"
-        android:textColor="#BA68C8"
+        android:textSize="@dimen/labelSize"
+        android:textColor="@color/labelColor"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         />
@@ -27,10 +39,12 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
     <EditText
         android:id="@+id/et_edit_contact_name"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_below="@id/tv_edit_contact_name"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
+        android:textSize="@dimen/valueSize"
+        android:textColor="@color/valueColor"
         android:layout_marginRight="20dp"
         />
 
@@ -40,8 +54,8 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="Last name:"
-        android:textSize="30sp"
-        android:textColor="#BA68C8"
+        android:textSize="@dimen/labelSize"
+        android:textColor="@color/labelColor"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         />
@@ -49,10 +63,12 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
     <EditText
         android:id="@+id/et_edit_contact_surname"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_below="@id/tv_edit_contact_surname"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
+        android:textSize="@dimen/valueSize"
+        android:textColor="@color/valueColor"
         android:layout_marginRight="20dp"
         />
 
@@ -61,8 +77,8 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="Phone:"
-        android:textSize="30sp"
-        android:textColor="#BA68C8"
+        android:textSize="@dimen/labelSize"
+        android:textColor="@color/labelColor"
         android:layout_below="@id/et_edit_contact_surname"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
@@ -71,10 +87,12 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
     <EditText
         android:id="@+id/et_edit_contact_number"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_below="@id/tv_edit_contact_phone"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
+        android:textSize="@dimen/valueSize"
+        android:textColor="@color/valueColor"
         android:layout_marginRight="20dp"
         />
 
@@ -83,8 +101,8 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="Email:"
-        android:textSize="30sp"
-        android:textColor="#BA68C8"
+        android:textSize="@dimen/labelSize"
+        android:textColor="@color/labelColor"
         android:layout_below="@id/et_edit_contact_number"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
@@ -93,9 +111,11 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
     <EditText
         android:id="@+id/et_edit_contact_email"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_below="@id/tv_edit_contact_email"
         android:layout_marginLeft="20dp"
+        android:textSize="@dimen/valueSize"
+        android:textColor="@color/valueColor"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         />
@@ -103,11 +123,14 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
     <Button
         android:id="@+id/btn_edit_contact_save"
         android:text="Save"
-        android:layout_width="120dp"
+        android:textColor="@color/labelColor"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/et_edit_contact_email"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
         android:layout_centerHorizontal="true"
-        />
+        android:layout_marginTop="20dp" />
 
 </RelativeLayout>
