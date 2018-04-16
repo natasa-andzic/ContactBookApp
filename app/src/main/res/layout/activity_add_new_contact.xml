@@ -39,6 +39,7 @@ Sadrzi dugme Save koje sadrzi intent na HomeActivity-->
 
     <EditText
         android:id="@+id/et_add_contact_name"
+        android:inputType="textCapSentences"
         android:textColor="@color/valueColor"
         android:layout_width="match_parent"
         android:layout_marginLeft="20dp"
@@ -62,6 +63,7 @@ Sadrzi dugme Save koje sadrzi intent na HomeActivity-->
 
     <EditText
         android:id="@+id/et_add_contact_surname"
+        android:inputType="textCapSentences"
         android:textColor="@color/valueColor"
         android:textSize="@dimen/valueSize"
         android:layout_width="match_parent"
@@ -85,6 +87,7 @@ Sadrzi dugme Save koje sadrzi intent na HomeActivity-->
 
     <EditText
         android:id="@+id/et_add_contact_number"
+        android:inputType="number"
         android:textColor="@color/valueColor"
         android:textSize="@dimen/valueSize"
         android:layout_width="match_parent"

@@ -38,6 +38,7 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
 
     <EditText
         android:id="@+id/et_edit_contact_name"
+        android:inputType="textCapSentences"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_below="@id/tv_edit_contact_name"
@@ -63,6 +64,7 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
     <EditText
         android:id="@+id/et_edit_contact_surname"
         android:layout_width="match_parent"
+        android:inputType="textCapSentences"
         android:layout_height="45dp"
         android:layout_below="@id/tv_edit_contact_surname"
         android:layout_marginLeft="20dp"
@@ -87,6 +89,7 @@ Dugme Save sacuva promene i vrati se na konkretni kontakt-->
     <EditText
         android:id="@+id/et_edit_contact_number"
         android:layout_width="match_parent"
+        android:inputType="number"
         android:layout_height="45dp"
         android:layout_below="@id/tv_edit_contact_phone"
         android:layout_marginLeft="20dp"
