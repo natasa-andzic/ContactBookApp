@@ -131,7 +131,25 @@ Sadrzi dugme Save koje sadrzi intent na HomeActivity-->
         android:layout_below="@+id/et_add_contact_email"
         android:gravity="center_horizontal"
         android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
          />
+
+    <Button
+        android:id="@+id/captureButton"
+        android:text="Take a photo"
+        android:textColor="@color/labelColor"
+        android:textSize="@dimen/valueSize"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/et_add_contact_email"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+    />
 
 </RelativeLayout>

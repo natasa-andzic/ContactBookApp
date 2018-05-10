@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.natasaandzic.domaci1">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.hardware.camera2.full" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/book"
@@ -22,7 +26,8 @@
         <activity
             android:name=".activity.EditContactActivity"
             android:label="Edit contact" />
-        <activity android:name=".activity.ContactDetailsActivity"></activity>
+        <activity android:name=".activity.ContactDetailsActivity" />
+        <activity android:name=".activity.CaptureActivity"></activity>
     </application>
 
 </manifest>

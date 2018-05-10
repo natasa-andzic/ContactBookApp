@@ -15,6 +15,7 @@ import com.natasaandzic.domaci1.db.ContactsDbHelper;
 public class AddNewContactActivity extends AppCompatActivity {
 
     private Button saveBtn;
+    private Button captureBtn;
     private EditText nameEt;
     private EditText surnameEt;
     private EditText numberEt;
@@ -33,6 +34,7 @@ public class AddNewContactActivity extends AppCompatActivity {
         emailEt = findViewById(R.id.et_add_contact_email);
 
         saveBtn = findViewById(R.id.saveButton);
+        captureBtn = findViewById(R.id.captureButton);
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +50,14 @@ public class AddNewContactActivity extends AppCompatActivity {
                 Intent i = new Intent();
                 setResult(Activity.RESULT_OK, i);
                 finish();
+            }
+        });
+
+        captureBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AddNewContactActivity.this, CaptureActivity.class);
+                startActivity(i);
             }
         });
     }
