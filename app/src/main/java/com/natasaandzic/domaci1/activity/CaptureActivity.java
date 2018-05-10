@@ -64,12 +64,10 @@ public class CaptureActivity extends AppCompatActivity {
     private CameraCaptureSession cameraCaptureSessions;
     private CaptureRequest.Builder captureRequestBuilder;
     private Size imageDimension;
-    private ImageReader imageReader;
 
     //sacuvati u fajl
     private File file;
     private static final int REQUEST_CAMERA_PERMISSION = 200;
-    private boolean mFlashSupported;
     private Handler mBackgroundHandler;
     private HandlerThread mBackgroundThread;
 
@@ -98,7 +96,7 @@ public class CaptureActivity extends AppCompatActivity {
         setContentView(R.layout.activity_capture);
 
         textureView = (TextureView)findViewById(R.id.textureView);
-        captureBtn = findViewById(R.id.captureButton);
+        captureBtn = (Button)findViewById(R.id.captBtn);
         // od Jave 1.4 assert se koristi da proveri da li je true ili false
         assert textureView!=null;
 
@@ -248,11 +246,6 @@ public class CaptureActivity extends AppCompatActivity {
         }
     }
 
-    private void save(byte[] bytes) {
-
-    }
-
-
     private void openCamera() {
         CameraManager manager  =(CameraManager)getSystemService(Context.CAMERA_SERVICE);
         try{
@@ -262,7 +255,7 @@ public class CaptureActivity extends AppCompatActivity {
             assert map!=null;
             imageDimension = map.getOutputSizes(SurfaceTexture.class)[0];
 
-            //Check realtime permission if run highrt API 23
+            //Check realtime permission if run higher API 23
             if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
                 ActivityCompat.requestPermissions(this,new String[]{
                         Manifest.permission.CAMERA,
@@ -326,6 +319,13 @@ public class CaptureActivity extends AppCompatActivity {
         super.onPause();
     }
 
+
+    private void startBackgroundThread() {
+        mBackgroundThread = new HandlerThread("Camera background");
+        mBackgroundThread.start();
+        mBackgroundHandler = new Handler(mBackgroundThread.getLooper());
+    }
+
     private void stopBackgroundThread() {
         mBackgroundThread.quitSafely();
         try{
@@ -337,9 +337,4 @@ public class CaptureActivity extends AppCompatActivity {
         }
     }
 
-    private void startBackgroundThread() {
-        mBackgroundThread = new HandlerThread("Camera background");
-        mBackgroundThread.start();
-        mBackgroundHandler = new Handler(mBackgroundThread.getLooper());
-    }
 }
