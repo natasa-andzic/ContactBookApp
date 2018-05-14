@@ -90,6 +90,28 @@ public class CaptureActivity extends AppCompatActivity {
         }
     };
 
+    TextureView.SurfaceTextureListener textureListener = new TextureView.SurfaceTextureListener() {
+        @Override
+        public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
+            openCamera();
+        }
+
+        @Override
+        public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
+
+        }
+
+        @Override
+        public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
+            return false;
+        }
+
+        @Override
+        public void onSurfaceTextureUpdated(SurfaceTexture surface) {
+
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,18 +133,23 @@ public class CaptureActivity extends AppCompatActivity {
     }
 
     private void takePicture() {
+        // Da li postoji kamera na telefonu
         if(cameraDevice ==null)
             return;
+        //instanciranje CameraManager-a
         CameraManager manager = (CameraManager)getSystemService(Context.CAMERA_SERVICE);
         try{
+            //dobijamo vrednosti polja karakteristika za kameru na nasem uredjaju
             CameraCharacteristics characteristics = manager.getCameraCharacteristics(cameraDevice.getId());
             Size[] jpegSizes = null;
             if(characteristics!=null)
+                //setujemo vrednosti na konfiguraciju nase kamere
                 jpegSizes = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP).getOutputSizes(ImageFormat.JPEG);
 
             //capture image with custom size
             int width=640;
             int height=480;
+            //setujemo vrednosti na konfiguraciju nase kamere
             if(jpegSizes!=null && jpegSizes.length > 0) {
                 width=jpegSizes[0].getWidth();
                 height=jpegSizes[0].getHeight();
@@ -194,7 +221,6 @@ public class CaptureActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-
                 @Override
                 public void onConfigureFailed(@NonNull CameraCaptureSession session) {
 
@@ -218,8 +244,9 @@ public class CaptureActivity extends AppCompatActivity {
             cameraDevice.createCaptureSession(Arrays.asList(surface), new CameraCaptureSession.StateCallback() {
                 @Override
                 public void onConfigured(@NonNull CameraCaptureSession cameraCaptureSession) {
+                    //ako ne postoji kamera na uredjaju
                     if(cameraDevice==null)
-                        return;;
+                        return;
                     cameraCaptureSessions = cameraCaptureSession;
                     updatePreview();
                 }
@@ -236,10 +263,13 @@ public class CaptureActivity extends AppCompatActivity {
     }
 
     private void updatePreview() {
+        //ako nemamo kameru na uredjaju
         if(cameraDevice == null)
             Toast.makeText(this,"Error", Toast.LENGTH_SHORT).show();
+        //CONTROL_MODE = autoexposure, autowhitebalance, autofocus, CONTROL_MODE_AUTO = auto vrednosti
         captureRequestBuilder.set(CaptureRequest.CONTROL_MODE,CaptureRequest.CONTROL_MODE_AUTO);
         try{
+            //request endlessly repeating capture of images by this capture session
             cameraCaptureSessions.setRepeatingRequest(captureRequestBuilder.build(),null,mBackgroundHandler);
         } catch (CameraAccessException e) {
             e.printStackTrace();
@@ -247,15 +277,20 @@ public class CaptureActivity extends AppCompatActivity {
     }
 
     private void openCamera() {
-        CameraManager manager  =(CameraManager)getSystemService(Context.CAMERA_SERVICE);
+        //pravimo instancu CameraManager-a
+        CameraManager manager = (CameraManager)getSystemService(Context.CAMERA_SERVICE);
         try{
+            //dobijamo id nase kamere
             cameraId = manager.getCameraIdList()[0];
+            //uzimamo vrednosti polja konfiguracije nase kamere
             CameraCharacteristics characteristics = manager.getCameraCharacteristics(cameraId);
+            //StreamConfigurationMap sluzi kao storage za konfiguraciju
+            //SCALER_STREAM_CONFIGURATION_MAP = konfiguracija kamere na nasem uredjaju
             StreamConfigurationMap map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
             assert map!=null;
             imageDimension = map.getOutputSizes(SurfaceTexture.class)[0];
 
-            //Check realtime permission if run higher API 23
+            //Provera za dozvole
             if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
                 ActivityCompat.requestPermissions(this,new String[]{
                         Manifest.permission.CAMERA,
@@ -263,6 +298,8 @@ public class CaptureActivity extends AppCompatActivity {
                 },REQUEST_CAMERA_PERMISSION);
                 return;
             }
+            //ako imamo dozvolu, otvorimo kameru
+            //metoda CameraManager.openCamera(id, callback, handler)
             manager.openCamera(cameraId, stateCallback,null);
         } catch (CameraAccessException e) {
             e.printStackTrace();
@@ -270,32 +307,10 @@ public class CaptureActivity extends AppCompatActivity {
 
     }
 
-    TextureView.SurfaceTextureListener textureListener = new TextureView.SurfaceTextureListener() {
-        @Override
-        public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
-            openCamera();
-        }
-
-        @Override
-        public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
-
-        }
-
-        @Override
-        public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
-            return false;
-        }
-
-        @Override
-        public void onSurfaceTextureUpdated(SurfaceTexture surface) {
-
-        }
-    };
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if(requestCode == REQUEST_CAMERA_PERMISSION){
-            if(grantResults[0]==PackageManager.PERMISSION_GRANTED)
+            if(grantResults[0]!=PackageManager.PERMISSION_GRANTED)
             {
                 Toast.makeText(this,"You can't use camera without permission", Toast.LENGTH_SHORT).show();
                 finish();
