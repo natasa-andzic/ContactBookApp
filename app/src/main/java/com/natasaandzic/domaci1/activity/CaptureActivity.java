@@ -158,7 +158,8 @@ public class CaptureActivity extends AppCompatActivity {
             List<Surface> outputSurface = new ArrayList<>(2);
             outputSurface.add(reader.getSurface());
             outputSurface.add(new Surface((textureView.getSurfaceTexture())));
-            final CaptureRequest.Builder captureBuilder = cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
+            final CaptureRequest.Builder captureBuilder = cameraDevice.createCaptureRequest
+                    (CameraDevice.TEMPLATE_STILL_CAPTURE);
             captureBuilder.addTarget(reader.getSurface());
             captureBuilder.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
 
@@ -204,7 +205,8 @@ public class CaptureActivity extends AppCompatActivity {
             reader.setOnImageAvailableListener(readerListener,mBackgroundHandler);
             final CameraCaptureSession.CaptureCallback captureListener = new CameraCaptureSession.CaptureCallback() {
                 @Override
-                public void onCaptureCompleted(@NonNull CameraCaptureSession session, @NonNull CaptureRequest request, @NonNull TotalCaptureResult result) {
+                public void onCaptureCompleted(@NonNull CameraCaptureSession session, @NonNull CaptureRequest request
+                        , @NonNull TotalCaptureResult result) {
                     super.onCaptureCompleted(session, request, result);
                     Toast.makeText(CaptureActivity.this,"Saved "+file,Toast.LENGTH_SHORT).show();
                     createCameraPreview();
