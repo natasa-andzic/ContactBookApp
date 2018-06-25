@@ -13,7 +13,7 @@ public class ContactsDbHelper extends SQLiteOpenHelper {
     private static final String TAG = "ContactsDbHelper";
 
     public static final String DATABASE_NAME = "contacts.com.natasaandzic.domaci1.db";
-    public static final int DATABASE_VERSION = 2;
+    public static final int DATABASE_VERSION = 4;
 
     private static ContactsDbHelper mInstance;
 
