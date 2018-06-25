@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--HomeActivity:
-Aktivnost koja sluzi za prikaz svih kontakta u list
+<!--HomeFragment1:
+Fragment koja sluzi za prikaz svih kontakta u list
 Prvi ekran koji se pojavi kada se pokrene aplikacija-->
 
 <RelativeLayout
@@ -10,19 +10,10 @@ Prvi ekran koji se pojavi kada se pokrene aplikacija-->
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/backGroundColor"
-    android:layout_height="match_parent">
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+    android:layout_height="match_parent"
+    >
 
     <android.support.v7.widget.RecyclerView
-        android:layout_below="@id/my_toolbar"
         android:id="@+id/rv_home_contact_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

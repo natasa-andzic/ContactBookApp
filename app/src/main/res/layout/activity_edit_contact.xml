@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--EditContactActivity:
-Dolazi se ovde kada se u HomeActivity klikne na konkretni kontakt
+Dolazi se ovde kada se u HomeFragment1 klikne na konkretni kontakt
 Dugme Save sacuva promene i vrati se na konkretni kontakt-->
 
 

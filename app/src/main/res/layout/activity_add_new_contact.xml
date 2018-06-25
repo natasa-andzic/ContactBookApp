@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--AddNewContactActivity:
-Otvara se nakon pritiska na dugme "Add new contact" u HomeActivity layout-u
-Sadrzi dugme Save koje sadrzi intent na HomeActivity-->
+Otvara se nakon pritiska na dugme "Add new contact" u HomeFragment1 layout-u
+Sadrzi dugme Save koje sadrzi intent na HomeFragment1-->
 
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"

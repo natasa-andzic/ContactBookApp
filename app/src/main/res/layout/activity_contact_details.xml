@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--Klikom na konkretni item u HomeActivity,
+<!--Klikom na konkretni item u HomeFragment1,
     otvara se ovaj layout
-Dugme Delete brise kontakt i vraca se na HomeActivity
+Dugme Delete brise kontakt i vraca se na HomeFragment1
 Dugme Edit nas vodi do EditContactActivity-->
 
 

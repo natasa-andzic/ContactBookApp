@@ -2,19 +2,15 @@ package com.natasaandzic.domaci1.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.natasaandzic.domaci1.R;
 import com.natasaandzic.domaci1.db.ContactsDbHelper;
-
-import org.w3c.dom.Text;
 
 public class ContactDetailsActivity extends AppCompatActivity {
 
@@ -70,7 +66,7 @@ public class ContactDetailsActivity extends AppCompatActivity {
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(ContactDetailsActivity.this,HomeActivity.class);
+                //Intent i = new Intent(ContactDetailsActivity.this,HomeFragment1.class);
                 //i.putExtra(ContactDetailsActivity.EXTRA_ID, id);
                 ContactsDbHelper.getInstance(ContactDetailsActivity.this).deleteContact(id);
                 Intent newIntent = new Intent();
