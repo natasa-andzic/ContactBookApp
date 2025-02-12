@@ -16,7 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.natasaandzic.domaci1.R;
+import com.example.natasaandzic.domaci1.R;
 import com.natasaandzic.domaci1.activity.AddNewContactActivity;
 import com.natasaandzic.domaci1.activity.ContactDetailsActivity;
 import com.natasaandzic.domaci1.adapter.ContactsRecyclerAdapter;

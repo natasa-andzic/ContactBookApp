@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.natasaandzic.domaci1.R;
+import com.example.natasaandzic.domaci1.R;
 import com.natasaandzic.domaci1.callback.OnUserClickCallback;
 import com.natasaandzic.domaci1.db.ContactsContract;
 

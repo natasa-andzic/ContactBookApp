@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.natasaandzic.domaci1.R;
+import com.example.natasaandzic.domaci1.R;
 import com.natasaandzic.domaci1.db.ContactsDbHelper;
 
 public class ContactDetailsActivity extends AppCompatActivity {

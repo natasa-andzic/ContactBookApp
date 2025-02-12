@@ -31,7 +31,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.natasaandzic.domaci1.R;
+
+import com.example.natasaandzic.domaci1.R;
 
 import java.io.File;
 import java.io.FileNotFoundException;

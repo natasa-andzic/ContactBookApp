@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import com.natasaandzic.domaci1.R;
+import com.example.natasaandzic.domaci1.R;
 import com.natasaandzic.domaci1.adapter.PagerAdapter;
 import com.natasaandzic.domaci1.fragment.HomeFragment;
 
